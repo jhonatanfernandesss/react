@@ -8,15 +8,15 @@ on:
 jobs:
   build:
     name: Sistema
-    runs-on: ubuntu
-    strategy:
-      matrix:
+    runs-on: ubuntu-latest
         node_version: ['8', '10', '12']
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
+    - name: Checkout repository
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node_version }}
+    
+    - name: Set up Node
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node_version }}
