@@ -11,10 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    -name: Set up Node
-     uses: actions/setup-node@v1
-     with:
-      node-version: 12
     
     - name: Checkout repository
     - uses: actions/checkout@v2
