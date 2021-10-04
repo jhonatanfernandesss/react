@@ -24,8 +24,26 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
         
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-        GITHUB_TOKEN: ${{ secrets.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 }}
+        
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v1
+
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+
+    - name: npm install, make test-coverage
+      run: |
+        npm install
+        make test-coverage
+
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.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 }}
 
