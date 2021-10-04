@@ -1,35 +1,22 @@
 name: Test
 
-on: ['push', 'pull_request']
-
+on:
+  pull_request:
+    branches:
+    - master
+    
 jobs:
-  code:
-    name: Test code
+  build:
     runs-on: ubuntu-latest
-
-    env:
-      GITHUB_TOKEN: ${{ secrets.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 }}
-
+    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Set up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
-
-      - name: Run Jest
-        run: yarn run test
-
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.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 }}     
-      
-          
+    - uses: actions/checkout@v2
+    
+    -name: Install Node.js
+    -uses: actions/setup-node@v1
+     with :
+     node-version: 12.x
+     -run: yarn
+     -run: yarn test
+     env:
+      CI: true
