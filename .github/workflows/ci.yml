@@ -9,10 +9,14 @@ jobs:
   build:
     name: Sistema
     runs-on: ubuntu-latest
-        node_version: 12
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
+    -name: Set up Node
+     uses: actions/setup-node@v1
+     with:
+      node-version: 12
+    
     - name: Checkout repository
     - uses: actions/checkout@v2
     
