@@ -27,6 +27,6 @@ jobs:
         npm run build --if-present
         npm test
         yarn
-        yarn test
+        yarn test --coverage
         env:
          CI: true
