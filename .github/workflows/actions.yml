@@ -16,3 +16,4 @@ jobs:
         correr: |
           ls $ {{github.workspace}}
       - run: echo "🍏 O status deste trabalho é $ {{job.status}}."
+
