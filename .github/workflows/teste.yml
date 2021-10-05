@@ -30,7 +30,7 @@ jobs:
           node-version: '12.x'
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
+      - name: Install Dependencies
+        run: yarn
           echo Add other actions to build,
           echo test, and deploy your project.
