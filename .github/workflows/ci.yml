@@ -1,7 +1,6 @@
 
 name: CI
 
-
 on:
 
   push:
@@ -28,8 +27,7 @@ jobs:
       - name: Install Dependencies
         run: yarn --1.22.15
         
-      - name: Check commit message
-      - uses: wagoid/commitlint-github-action@v4
+
         
 
 
