@@ -24,7 +24,7 @@ jobs:
           node-version: '12.x'
 
       - name: Install Dependencies
-        run: npm install
+        run: yarn 1.2
         
       - name: Test
         run: yarn test --coverage
