@@ -12,12 +12,10 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-
+        
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-         with:
-          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v1
@@ -27,3 +25,14 @@ jobs:
       - name: Install Dependencies
         run: yarn --1.22.15
         
+      - name: npm install
+        run: |
+          npm install
+          
+          
+
+        
+
+        
+
+
