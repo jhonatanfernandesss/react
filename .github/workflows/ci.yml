@@ -25,9 +25,7 @@ jobs:
 
       - name: Install Dependencies
         run: yarn --1.22.15
-        
-      - name: Check linting 
-        run: yarn lint
+
         
 
 
